@@ -12,7 +12,7 @@ def start_game():
           \n D - Fraction Conversion\
           \n E - Decimal Conversion\
           \n F - Percentages\
-          \n @ - All The Above")
+          \n @ - All The Above\n")
 
     # todo: Two modes: one with timer and one without and provides average time to calculate
 
@@ -34,7 +34,7 @@ def start_game():
     }
 
     # Handle user choice
-    game_type_dict[user_choice]
+    game_type_dict[user_choice]()
 
 
 if __name__ == "__main__":
