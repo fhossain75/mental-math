@@ -69,9 +69,9 @@ def output_score_board_results(avg_response_time, correct_answer_count):
 
     # Update & output best time
     if best_time > avg_response_time:
-        score_board["bestTime"] = correct_answer_count
+        score_board["bestTime"] = best_time
         score_board_changed = True
-        print(f"\nThis has been your fastest time yet! You beat your previous best time of {best_time} secs.")
+        print(f"This has been your fastest time yet! You beat your previous best time of {best_time} secs.")
     else:
         print(f"Current best time is {best_time} secs.")
 
