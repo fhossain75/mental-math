@@ -5,11 +5,20 @@ from statistics import mean
 from random import randint
 
 
-time_limit = 1  # todo: create mode without timer
-# todo: simplify construction of multiplication games - just changing the num int rang
+time_limit = 0.5  # todo: create mode without timer
 
 
-def base10_multiplication():
+def multiplication(mode):
+
+    # todo: lmfao refactor tf out of this
+    type_dict = {
+        "base10": [[19, 19], [10, 19]],
+        "twoBy1": [[10, 99], [2, 9]],
+        "twoBy2": [[10, 99], [10, 99]]
+    }
+    type_value = type_dict[mode]
+    range_start1, range_end1 = type_value[0][0], type_value[0][1]
+    range_start2, range_end2 = type_value[1][0], type_value[1][1]
 
     # todo: add beginning print + and tip on how to solve + maybe start button
     os.system("clear")
@@ -21,7 +30,7 @@ def base10_multiplication():
 
         question_start_time = time.time()
 
-        num_1, num_2 = randint(10, 19), randint(10, 19)
+        num_1, num_2 = randint(range_start1, range_end1), randint(range_start2, range_end2)
         answer = num_1 * num_2
         question = f"{num_1} x {num_2}"
         user_answer = input(f"{question} = ")
@@ -52,12 +61,6 @@ def base10_multiplication():
         for answer in wrong_answers:
             print(f"{answer[0]}; {answer[1]}")  # todo: return as a table
 
-
-def twoBy1_multiplication():
-    pass  # todo: Add message that game is in construction and select another game
-
-def twoBy2_multiplication():
-    pass
 
 def fraction_conversion():
     pass

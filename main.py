@@ -1,6 +1,15 @@
 from games import *
 
 
+game_type_dict = {
+    'A': lambda: multiplication("base10"),
+    'B': lambda: multiplication("twoBy1"),
+    'C': lambda: multiplication("twoBy2"),
+    'D': fraction_conversion,
+    'E': decimal_conversion,
+    'F': percentages
+}
+
 def start_game():
     # todo: Add ASCII Art & change color
     print("\n Welcome to Math Practice!\
@@ -20,22 +29,11 @@ def start_game():
 
     # todo: Two modes: one with timer and one without and provides average time to calculate
 
-    # Get user input
-    user_choice = input("> ")
-    selection_options = [chr(ascii_code) for ascii_code in range(65, 65 + 7)]
-
-    while user_choice not in selection_options:
+    # Get user choice
+    user_choice = input("> ").upper()
+    while user_choice not in game_type_dict:
         print("That's not one of the choices! Try again.\n")
-        user_choice = input("> ")
-
-    game_type_dict = {
-        'A': base10_multiplication,
-        'B': twoBy1_multiplication,
-        'C': twoBy2_multiplication,
-        'D': fraction_conversion,
-        'E': decimal_conversion,
-        'F': percentages
-    }
+        user_choice = input("> ").upper()
 
     # Handle user choice
     game_type_dict[user_choice]()
