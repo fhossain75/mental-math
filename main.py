@@ -10,6 +10,7 @@ game_type_dict = {
     'F': percentages
 }
 
+
 def start_game():
     # todo: Add ASCII Art & change color
     print("\n Welcome to Math Practice!\
