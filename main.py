@@ -14,6 +14,10 @@ def start_game():
           \n F - Percentages\
           \n @ - All The Above\n")
 
+    # print("Do you want to learn mental math tricks or practice problems?\
+    #       \n 1 - Learn\
+    #       \n 2 - Practice")
+
     # todo: Two modes: one with timer and one without and provides average time to calculate
 
     # Get user input
