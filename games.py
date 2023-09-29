@@ -4,11 +4,14 @@ from math import ceil
 from statistics import mean
 from random import randint
 
-
-time_limit = 0.5  # todo: create mode without timer
+time_limit = 1  # todo: create mode without timer
 
 
 def multiplication(mode):
+    # todo: add beginning print + and tip on how to solve + maybe start button
+    os.system("clear")
+    response_time = []
+    wrong_answers = []
 
     # todo: lmfao refactor tf out of this
     type_dict = {
@@ -16,23 +19,19 @@ def multiplication(mode):
         "twoBy1": [[10, 99], [2, 9]],
         "twoBy2": [[10, 99], [10, 99]]
     }
-    type_value = type_dict[mode]
-    range_start1, range_end1 = type_value[0][0], type_value[0][1]
-    range_start2, range_end2 = type_value[1][0], type_value[1][1]
-
-    # todo: add beginning print + and tip on how to solve + maybe start button
-    os.system("clear")
-    response_time = []
-    wrong_answers = []
+    random_range1 = type_dict[mode][0]
+    random_range2 = type_dict[mode][1]
 
     t_end = time.time() + 60 * time_limit
     while time.time() < t_end:
 
         question_start_time = time.time()
 
-        num_1, num_2 = randint(range_start1, range_end1), randint(range_start2, range_end2)
+        num_1, num_2 = randint(random_range1[0], random_range1[1]), randint(random_range2[0], random_range2[1])
         answer = num_1 * num_2
         question = f"{num_1} x {num_2}"
+
+        # todo: abstract getting user input into a method
         user_answer = input(f"{question} = ")
 
         # Error handling: Non-int user input
@@ -65,8 +64,10 @@ def multiplication(mode):
 def fraction_conversion():
     pass
 
+
 def decimal_conversion():
     pass
+
 
 def percentages():
     pass
