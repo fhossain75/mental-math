@@ -1,16 +1,18 @@
+import os
 import time
 from math import ceil
 from statistics import mean
 from random import randint
 
 
-time_limit = 0.5  # todo: create mode without timer
+time_limit = 1  # todo: create mode without timer
 # todo: simplify construction of multiplication games - just changing the num int rang
 
 
 def base10_multiplication():
 
     # todo: add beginning print + and tip on how to solve + maybe start button
+    os.system("clear")
     response_time = []
     wrong_answers = []
 
@@ -19,7 +21,7 @@ def base10_multiplication():
 
         question_start_time = time.time()
 
-        num_1, num_2 = randint(10, 20), randint(10, 20)
+        num_1, num_2 = randint(10, 19), randint(10, 19)
         answer = num_1 * num_2
         question = f"{num_1} x {num_2}"
         user_answer = input(f"{question} = ")
@@ -42,7 +44,7 @@ def base10_multiplication():
 
     # Provide average computation time
     if response_time:
-        print(f"Your average time to mentally compute is {ceil(mean(response_time))}\n")  # todo: rephrase
+        print(f"Your average time to mentally compute is {ceil(mean(response_time))} seconds.\n")  # todo: rephrase
 
     # Provide questions answered wrong
     if wrong_answers:
@@ -52,7 +54,7 @@ def base10_multiplication():
 
 
 def twoBy1_multiplication():
-    pass # todo: Add message that game is in construction and select another game
+    pass  # todo: Add message that game is in construction and select another game
 
 def twoBy2_multiplication():
     pass
