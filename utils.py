@@ -30,7 +30,7 @@ def output_game_results(response_time, wrong_answers):
     if response_time:
         print(f"Average time of {avg_response_time} seconds.")  # todo: rephrase
 
-    # Output score board
+    # Output & update score board
     output_score_board_results(avg_response_time, correct_answer_count)
 
     # Provide number of incorrect answers

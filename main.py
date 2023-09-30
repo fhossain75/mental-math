@@ -31,13 +31,24 @@ def start_game():
     # todo: Two modes: one with timer and one without and provides average time to calculate
 
     # Get user choice
-    user_choice = input("> ").upper()
-    while user_choice not in game_type_dict:
+    game_type = input("> ").upper()
+    while game_type not in game_type_dict:
         print("That's not one of the choices! Try again.\n")
-        user_choice = input("> ").upper()
+        game_type = input("> ").upper()
 
     # Handle user choice
-    game_type_dict[user_choice]()
+    game_type_dict[game_type]()
+
+    # todo: Provide previous scores
+    # print("Do you want to see your previous performance? (Y / N)\n")
+    # user_choice = input("> ").upper()
+    # while user_choice not in ["Y", "N"]:
+    #     user_choice = input("> ").upper()
+    #
+
+
+
+
 
 
 if __name__ == "__main__":
