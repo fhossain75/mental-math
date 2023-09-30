@@ -28,7 +28,7 @@ def output_game_results(response_time, wrong_answers):
 
     # Provide average computation time
     if response_time:
-        print(f"Your average time to mentally compute is {avg_response_time} seconds.")  # todo: rephrase
+        print(f"Average time of {avg_response_time} seconds.")  # todo: rephrase
 
     # Output score board
     output_score_board_results(avg_response_time, correct_answer_count)
@@ -38,6 +38,7 @@ def output_game_results(response_time, wrong_answers):
         print("\nYou got the following questions wrong:")
         for answer in wrong_answers:
             print(f"{answer[0]}; {answer[1]}")  # todo: return as a table
+        print()
 
 
 def get_score_board_data():
@@ -68,7 +69,7 @@ def output_score_board_results(avg_response_time, correct_answer_count):
         print(f"Current high score is {high_score}")
 
     # Update & output best time
-    if best_time > avg_response_time:
+    if best_time < avg_response_time:
         score_board["bestTime"] = best_time
         score_board_changed = True
         print(f"This has been your fastest time yet! You beat your previous best time of {best_time} secs.")
